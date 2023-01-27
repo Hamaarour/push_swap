@@ -10,23 +10,42 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "push_swap.h"
 
-int main()
+void push_to_stack(t_list **stack, int value)
 {
-   int i = -1;
-   t_list   *lst = NULL;
-   while (++i < 5)
+   ft_lstadd_back(stack, ft_lstnew(value));
+}
+
+int main(int ac, char **av)
+{
+   t_list *stack_a;
+   int value;
+   int i;
+   int j;
+
+   stack_a = NULL;
+   i = 2;
+   j = 1;
+   if (ac == 1)
+      exit(1);
+   while (i <= ac)
    {
-      ft_lstadd_back(&lst, ft_lstnew(i));
+      value = ft_atoi(av[j++]);
+      push_to_stack(&stack_a, value);
+      i++;
    }
-   t_list *new = ft_lstnew(100);
-   ft_lstadd_front(&lst, new);
-   while(lst)
+
+   if (stack_a != NULL && stack_a->next != NULL)
+      swap_a(&stack_a, stack_a->next);
+
+
+   //just print the stack
+   i = 0;
+   while (i < 10)
    {
-      printf("%d\n", lst->value);
-      lst = lst->next;
-      
+      printf("%d\n", stack_a->value);
+      stack_a = stack_a->next;
+      i++;
    }
 }

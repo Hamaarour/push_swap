@@ -1,28 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstsize.c                                       :+:      :+:    :+:   */
+/*   sa.c                                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hamaarou <hamaarou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/22 15:02:30 by hamaarou          #+#    #+#             */
-/*   Updated: 2023/01/22 15:03:00 by hamaarou         ###   ########.fr       */
+/*   Created: 2023/01/27 01:22:55 by hamaarou          #+#    #+#             */
+/*   Updated: 2023/01/27 01:22:55 by hamaarou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-int ft_lstsize(t_list *lst)
+
+void    swap_a(t_list **first, t_list *second) 
 {
-    int count;
-    t_list* current;
-
-    count = 0;
-    current = lst;
-    while (current != NULL) {
-        count++;
-        current = current->next;
+    if (first != NULL && second != NULL) 
+    {
+        int temp;
+        
+        temp = (*first)->value;
+        (*first)->value = second->value;
+        second->value = temp;
     }
-    return count;
-
 }
