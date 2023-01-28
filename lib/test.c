@@ -1,4 +1,6 @@
-int i = -1;
+int main ()
+{
+   int i = -1;
    t_list   *lst = NULL;
    while (++i < 5)
    {
@@ -12,3 +14,4 @@ int i = -1;
       lst = lst->next;
       
    }
+}

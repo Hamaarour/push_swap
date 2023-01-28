@@ -17,7 +17,8 @@ CFLAGS=-Wall -Wextra -Werror
 
 SRC= lib/ft_atoi.c \
 	lib/ft_lstadd_back.c lib/ft_lstadd_front.c lib/ft_lstnew.c lib/ft_lstsize.c  \
-	push/sa.c \
+	push/swap.c push/swap_a.c push/swap_b.c push/bottom_stack.c push/rotate_a.c push/rotate_b.c push/rr.c\
+	utils/push_to_stack.c \
 	push_swap.c
 
 

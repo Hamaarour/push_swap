@@ -31,8 +31,19 @@ void    ft_lstadd_back(t_list **lst, t_list *new);
 void    ft_lstadd_front(t_list **lst, t_list *new);
 int     ft_lstsize(t_list *lst);
 int     ft_atoi(const char *str);
-void    swap_a(t_list **first, t_list *second);
 
+void push_stack(t_list **stack, int value);
+
+//------------------------actions---------------------
+void    swap(t_list *stack);
+void    sa(t_list **stack_a);
+void    sb(t_list **stack_b);
+void    s_ab(t_list **stack);
+
+t_list  *bottom_stack(t_list *stack);
+void    ra(t_list **stack_a);
+void    rb(t_list **stack_b);
+void    rr(t_list **stack);
 
 
 

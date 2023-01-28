@@ -1,26 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sa.c                                               :+:      :+:    :+:   */
+/*   ss.c                                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hamaarou <hamaarou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/27 01:22:55 by hamaarou          #+#    #+#             */
-/*   Updated: 2023/01/27 01:22:55 by hamaarou         ###   ########.fr       */
+/*   Created: 2023/01/28 15:04:12 by hamaarou          #+#    #+#             */
+/*   Updated: 2023/01/28 15:04:12 by hamaarou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-
-void    swap_a(t_list **first, t_list *second) 
+/*
+    ss : sa and sb at the same time.
+*/
+void    s_ab(t_list **stack)
 {
-    if (first != NULL && second != NULL) 
-    {
-        int temp;
-        
-        temp = (*first)->value;
-        (*first)->value = second->value;
-        second->value = temp;
-    }
+    sa(&stack);
+    sb(&stack);
+    write(1, "ss\n",3);
 }
