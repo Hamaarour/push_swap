@@ -41,9 +41,11 @@ void    sb(t_list **stack_b);
 void    s_ab(t_list **stack);
 
 t_list  *bottom_stack(t_list *stack);
+void    reverseList(t_list **stack_head);
 void    ra(t_list **stack_a);
 void    rb(t_list **stack_b);
-void    rr(t_list **stack);
+void    rr(t_list **stack_ab);
+void last_first(t_list **stack);
 
 
 

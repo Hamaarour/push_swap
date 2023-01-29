@@ -11,3 +11,9 @@
 /* ************************************************************************** */
 
 #include "../push_swap.h"
+
+void    rb(t_list **stack_b)
+{
+    reverseList(stack_b);
+    write(1, "rb\n", 3);  
+}

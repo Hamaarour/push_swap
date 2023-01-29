@@ -5,9 +5,16 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: hamaarou <hamaarou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/28 16:35:16 by hamaarou          #+#    #+#             */
-/*   Updated: 2023/01/28 16:35:16 by hamaarou         ###   ########.fr       */
+/*   Created: 2023/01/29 13:56:42 by hamaarou          #+#    #+#             */
+/*   Updated: 2023/01/29 13:56:42 by hamaarou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
+
+void    rr(t_list **stack_ab)
+{
+    ra(stack_ab);
+    rb(stack_ab);
+    write(1, "rr\n", 3);
+}

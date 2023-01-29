@@ -33,14 +33,12 @@ int main(int ac, char **av)
 
    // if (stack_a != NULL && stack_a->next != NULL)
    //    sa(&stack_a);
-   ra(&stack_a);
+   last_first(&stack_a);
 
    //just print the stack
-   i = 0;
-   while (i < 1)
+   while (stack_a)
    {
       printf("%d\n", stack_a->value);
       stack_a = stack_a->next;
-      i++;
    }
 }
