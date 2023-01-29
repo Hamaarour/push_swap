@@ -38,3 +38,22 @@ void reverseList(t_list **stack)
     bottom_stack(*stack)->next = first;
     first->next = NULL;
 }
+
+void    ra(t_list **stack_a)
+{
+    reverseList(stack_a);
+    write(1, "ra\n", 3);  
+}
+
+void    rb(t_list **stack_b)
+{
+    reverseList(stack_b);
+    write(1, "rb\n", 3);  
+}
+
+void    rr(t_list **stack_ab)
+{
+    ra(stack_ab);
+    rb(stack_ab);
+    write(1, "rr\n", 3);
+}
