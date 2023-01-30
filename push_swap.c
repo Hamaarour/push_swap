@@ -34,30 +34,27 @@ int main(int ac, char **av)
       push_stack(&stack_a, value);
       i++;
    }
-   push_stack(&stack_b, 5);
-   push_stack(&stack_b, 6);
-   push_stack(&stack_b, 7);
-   push_stack(&stack_b, 8);
 
-   
-   case_three_numbers(&stack_a);
+   case_five_numbers(&stack_a, &stack_b);
 
    //just print the stack
-   
-   printf("*********************\n");
+   printf("******   Stack A ********\n");
+   printf("*************************\n");
    while (stack_a)
    {
       printf("\t%d\n", stack_a->value);
       stack_a = stack_a->next;
    }
-   printf("*********************\n");
-/*
-   printf("Stack b \n");
+   printf("\n\n");
 
+   printf("******   Stack B ******** \n");
+   printf("*************************\n");
    while (stack_b)
    {
-      printf("%d\n", stack_b->value);
+      printf("\t%d\n", stack_b->value);
       stack_b = stack_b->next;
    }
-   */
+   printf("*************************\n");
+   
+  //while(1);
 }

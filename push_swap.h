@@ -56,7 +56,7 @@ void    pa(t_list **stack_a, t_list **stack_b);
 //------------------------Sorting---------------------
 
 void  case_three_numbers(t_list **stack_a);
-
+void  case_five_numbers(t_list **stack_a, t_list **stack_b);
 
 
 //------------------------Libft---------------------

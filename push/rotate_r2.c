@@ -14,16 +14,16 @@
 
 
 /*
-In summary, this function takes the last element of the linked list and makes it the first element 
+In summary, this function takes the last element of the linked list and makes it the first element
 by updating the links accordingly. It does this by iterating through the list to find the last element,
-then updating the links so that the last element is at the head of the list and the head of the list 
+then updating the links so that the last element is at the head of the list and the head of the list
 is at the end of the list.
 */
-void    last_first(t_list **stack) 
+void    last_first(t_list **stack)
 {
     t_list *last;
     t_list *current;
-    
+
     if (*stack == NULL || (*stack)->next == NULL)
         return;
     current = *stack;
@@ -39,17 +39,17 @@ void    last_first(t_list **stack)
 void    rra(t_list  **stack_a)
 {
     last_first(stack_a);
-    write(1, "rra\n", 3);
+    write(1, "rra\n", 5);
 }
 
 void    rrb(t_list  **stack_b)
 {
     last_first(stack_b);
-    write(1, "rrb\n", 3);
+    write(1, "rrb\n", 5);
 }
 void    rrr(t_list  **stack)
 {
     rrb(stack);
-    rrb(stack); 
-    write(1, "rrr\n", 3);
+    rrb(stack);
+    write(1, "rrr\n", 5);
 }
