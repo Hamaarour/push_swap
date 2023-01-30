@@ -12,6 +12,7 @@
 
 #include "push_swap.h"
 
+
 int main(int ac, char **av)
 {
    t_list *stack_a;
@@ -38,17 +39,19 @@ int main(int ac, char **av)
    push_stack(&stack_b, 7);
    push_stack(&stack_b, 8);
 
-  
-   pb(&stack_a,&stack_b);
-
+   
+   case_three_numbers(&stack_a);
 
    //just print the stack
-   printf("Stack a \n");
+   
+   printf("*********************\n");
    while (stack_a)
    {
-      printf("%d\n", stack_a->value);
+      printf("\t%d\n", stack_a->value);
       stack_a = stack_a->next;
    }
+   printf("*********************\n");
+/*
    printf("Stack b \n");
 
    while (stack_b)
@@ -56,4 +59,5 @@ int main(int ac, char **av)
       printf("%d\n", stack_b->value);
       stack_b = stack_b->next;
    }
+   */
 }

@@ -1,31 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pb.c                                               :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hamaarou <hamaarou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/29 15:40:30 by hamaarou          #+#    #+#             */
-/*   Updated: 2023/01/29 23:22:51 by hamaarou         ###   ########.fr       */
+/*   Created: 2023/01/30 15:49:33 by hamaarou          #+#    #+#             */
+/*   Updated: 2023/01/30 15:51:19 by hamaarou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-// send top of a to top of b
-
-void pb(t_list **stack_a, t_list **stack_b)
+void	*ft_calloc(size_t count, size_t size)
 {
-    t_list *first_a;
-    t_list *first_b;
+	void	*p;
+	size_t	i;
 
-    if(stack_a == NULL || (*stack_a)->next == NULL)
-        return; 
-    first_a = NULL;
-    first_a = (*stack_a);
-    first_b = (*stack_b);
-    (*stack_a) = (*stack_a)->next;
-    (*stack_b) = first_a;
-    first_a->next = first_b;
-   
+	i = 0;
+	if (count != 0 && size > SIZE_MAX / count)
+		return (0);
+	p = malloc(count * size);
+	if (!p)
+		return (NULL);
+	while (i < count * size)
+		((char *)p)[i++] = 0;
+	return ((void *)p);
 }

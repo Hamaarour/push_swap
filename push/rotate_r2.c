@@ -12,15 +12,6 @@
 
 #include "../push_swap.h"
 
-t_list  *bottom_stack(t_list *stack)
-{
-    while(stack != NULL && stack->next != NULL)
-        stack = stack->next;
-    return(stack);
-}
-/*
-The last element becomes the first one
-*/
 
 /*
 In summary, this function takes the last element of the linked list and makes it the first element 

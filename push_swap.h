@@ -30,7 +30,7 @@ t_list  *ft_lstnew(int content);
 void    ft_lstadd_back(t_list **lst, t_list *new);
 void    ft_lstadd_front(t_list **lst, t_list *new);
 int     ft_lstsize(t_list *lst);
-int     ft_atoi(const char *str);
+t_list  *lst_last(t_list *stack);
 
 void push_stack(t_list **stack, int value);
 
@@ -40,7 +40,6 @@ void    sa(t_list **stack_a);
 void    sb(t_list **stack_b);
 void    s_ab(t_list **stack);
 
-t_list  *bottom_stack(t_list *stack);
 void    reverseList(t_list **stack_head);
 void    ra(t_list **stack_a);
 void    rb(t_list **stack_b);
@@ -53,6 +52,21 @@ void    rrr(t_list  **stack_a);
 
 void    pb(t_list **stack_a, t_list **stack_b);
 void    pa(t_list **stack_a, t_list **stack_b);
+
+//------------------------Sorting---------------------
+
+void  case_three_numbers(t_list **stack_a);
+
+
+
+//------------------------Libft---------------------
+int	ft_atoi(const char *str);
+void	*ft_calloc(size_t count, size_t size);
+char	**ft_split(char const *s, char sep);
+size_t	ft_strlen(const char *str);
+char	*ft_substr(char const *s, unsigned int start, size_t len);
+char	*ft_strdup(const char *s1);
+
 
 
 

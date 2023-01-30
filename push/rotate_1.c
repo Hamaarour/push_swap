@@ -20,7 +20,7 @@ return without doing anything. If not, we
 save the pointer to the first element in 
 a variable first, update the head of the 
 list to point to the second element, then
-we use the bottom_stack function to find
+we use the lst_last function to find
 the last element in the list, and update
 its next pointer to point to the original
 first element. Finally we set the next 
@@ -28,6 +28,7 @@ pointer of the original first element
 to be null to indicate it is the last 
 element now
 */
+
 void reverseList(t_list **stack)
 {
    t_list *first;
@@ -35,7 +36,7 @@ void reverseList(t_list **stack)
         return;
     first = *stack;
     *stack = first->next;
-    bottom_stack(*stack)->next = first;
+    lst_last(*stack)->next = first;
     first->next = NULL;
 }
 

@@ -1,30 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pa.c                                               :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hamaarou <hamaarou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/29 15:40:05 by hamaarou          #+#    #+#             */
-/*   Updated: 2023/01/29 23:22:36 by hamaarou         ###   ########.fr       */
+/*   Created: 2023/01/30 15:49:52 by hamaarou          #+#    #+#             */
+/*   Updated: 2023/01/30 15:50:30 by hamaarou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+
 #include "../push_swap.h"
-// send top of b to top of a
 
-void pa(t_list **stack_a, t_list **stack_b)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-    t_list *first_a;
-    t_list *first_b;
+	char	*b;
+	size_t	i;
 
-    if(stack_b == NULL || (*stack_b)->next == NULL)
-        return; 
-    first_b = NULL;
-    first_b = (*stack_b);
-    first_a = (*stack_a);
-    (*stack_b) = (*stack_b)->next;
-    (*stack_a) = first_b;
-    first_b->next = first_a;
-   
+	i = 0;
+	if (!s)
+		return (NULL);
+	if (start >= ft_strlen(s))
+		return (ft_strdup(""));
+	if (len > ft_strlen(s))
+		len = ft_strlen(s) - start;
+	b = malloc((len + 1));
+	if (!b)
+		return (NULL);
+	while (s[start] != '\0' && i < len && start < ft_strlen(s))
+	{
+		b[i] = s[start];
+		start++;
+		i++;
+	}
+	b[i] = 0;
+	return (b);
 }
