@@ -39,17 +39,17 @@ void    last_first(t_list **stack)
 void    rra(t_list  **stack_a)
 {
     last_first(stack_a);
-    write(1, "rra\n", 5);
+    printf("rra\n");
 }
 
 void    rrb(t_list  **stack_b)
 {
     last_first(stack_b);
-    write(1, "rrb\n", 5);
+    printf("rrb\n");
 }
 void    rrr(t_list  **stack)
 {
     rrb(stack);
     rrb(stack);
-    write(1, "rrr\n", 5);
+    printf("rrr\n");
 }

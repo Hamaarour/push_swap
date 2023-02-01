@@ -15,11 +15,11 @@
 /*
     swap the 2 top element in a stack
 */
-void    swap(t_list  *stack) 
+void    swap(t_list  *stack)
 {
     int temp;
 
-    if (stack != NULL && stack->next != NULL) 
+    if (stack != NULL && stack->next != NULL)
     {
         temp = stack->value;
         stack->value = stack->next->value;
@@ -34,7 +34,7 @@ sb (swap b): Swap the first 2 elements at the top of stack b.
 void    sb(t_list **stack_b)
 {
     swap(*stack_b);
-    write(1,"sb\n",3);
+    printf("sb\n");
 }
 
 /*
@@ -45,7 +45,7 @@ sa (swap a): Swap the first 2 elements at the top of stack a.
 void    sa(t_list **stack_a)
 {
     swap(*stack_a);
-    write(1,"sa\n",3);
+    printf("sa\n");
 }
 
 /*
@@ -55,5 +55,5 @@ void    s_ab(t_list **stack)
 {
     sa(stack);
     sb(stack);
-    write(1, "ss\n",3);
+    printf("ss\n");
 }

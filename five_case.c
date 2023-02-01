@@ -6,7 +6,7 @@
 /*   By: hamaarou <hamaarou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 17:31:47 by hamaarou          #+#    #+#             */
-/*   Updated: 2023/01/30 22:50:28 by hamaarou         ###   ########.fr       */
+/*   Updated: 2023/02/01 21:16:38 by hamaarou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,8 +66,8 @@ void	actions(int j, t_list **stack_a, t_list **stack_b)
 	else if (j == 4)
 	{
 		rra(stack_a);
-		rra(stack_a);
 		pb(stack_a, stack_b);
+		rra(stack_a);
 	}
 	else if (j == 5)
 	{

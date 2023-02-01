@@ -37,24 +37,26 @@ int main(int ac, char **av)
 
    case_five_numbers(&stack_a, &stack_b);
 
-   //just print the stack
-   printf("******   Stack A ********\n");
-   printf("*************************\n");
-   while (stack_a)
-   {
-      printf("\t%d\n", stack_a->value);
-      stack_a = stack_a->next;
-   }
-   printf("\n\n");
+   // //just print the stack
+   //printf("******   Stack A ********\n");
+   //t_list *t;
+   // while (stack_a)
+   // {
+   //    printf("%d\n", stack_a->value);
+   //    free(stack_a);
+   //    stack_a = stack_a->next;
+   // }
+   // free(stack_a);
+   // stack_a = NULL;
+   // printf("\n\n");
+   // printf("******   Stack B ******** \n");
+   // printf("*************************\n");
+   // while (stack_b)
+   // {
+   //    printf("\t%d\n", stack_b->value);
+   //    stack_b = stack_b->next;
+   // }
+   // printf("*************************\n");
 
-   printf("******   Stack B ******** \n");
-   printf("*************************\n");
-   while (stack_b)
-   {
-      printf("\t%d\n", stack_b->value);
-      stack_b = stack_b->next;
-   }
-   printf("*************************\n");
-   
-  //while(1);
+
 }

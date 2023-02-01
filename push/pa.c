@@ -6,7 +6,7 @@
 /*   By: hamaarou <hamaarou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 15:40:05 by hamaarou          #+#    #+#             */
-/*   Updated: 2023/01/30 19:46:59 by hamaarou         ###   ########.fr       */
+/*   Updated: 2023/02/01 23:20:56 by hamaarou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,6 @@ void	pa(t_list **stack_a, t_list **stack_b)
 	(*stack_b) = (*stack_b)->next;
 	(*stack_a) = first_b;
 	first_b->next = first_a;
-	write(1, "pa\n", 3);
+	printf("pa\n");
 }
+
