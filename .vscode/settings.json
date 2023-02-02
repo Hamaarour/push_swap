@@ -1,5 +1,6 @@
 {
     "files.associations": {
         "type_traits": "c"
-    }
+    },
+    "cmake.sourceDirectory": "${workspaceFolder}/push_swap_visualizer"
 }

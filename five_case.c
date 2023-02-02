@@ -6,7 +6,7 @@
 /*   By: hamaarou <hamaarou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 17:31:47 by hamaarou          #+#    #+#             */
-/*   Updated: 2023/02/01 21:16:38 by hamaarou         ###   ########.fr       */
+/*   Updated: 2023/02/02 03:57:32 by hamaarou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,4 +101,6 @@ void	case_five_numbers(t_list **stack_a, t_list **stack_b)
 	case_three_numbers(stack_a);
 	pa(stack_a, stack_b);
 	pa(stack_a, stack_b);
+	if ((*stack_a)->value > (*stack_a)->next->value)
+		sa(stack_a);
 }

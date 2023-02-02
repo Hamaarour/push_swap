@@ -40,12 +40,12 @@ int main(int ac, char **av)
    // //just print the stack
    //printf("******   Stack A ********\n");
    //t_list *t;
-   // while (stack_a)
-   // {
-   //    printf("%d\n", stack_a->value);
-   //    free(stack_a);
-   //    stack_a = stack_a->next;
-   // }
+   while (stack_a)
+   {
+      printf("%d\n", stack_a->value);
+      free(stack_a);
+      stack_a = stack_a->next;
+   }
    // free(stack_a);
    // stack_a = NULL;
    // printf("\n\n");
