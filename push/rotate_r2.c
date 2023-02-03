@@ -14,10 +14,10 @@
 
 
 /*
-In summary, this function takes the last element of the linked list and makes it the first element
-by updating the links accordingly. It does this by iterating through the list to find the last element,
-then updating the links so that the last element is at the head of the list and the head of the list
-is at the end of the list.
++In summary, this function takes the last element of the linked list and makes it the first element
++by updating the links accordingly. It does this by iterating through the list to find the last element,
++then updating the links so that the last element is at the head of the list and the head of the list
++is at the end of the list.
 */
 void    last_first(t_list **stack)
 {
@@ -39,17 +39,17 @@ void    last_first(t_list **stack)
 void    rra(t_list  **stack_a)
 {
     last_first(stack_a);
-    printf("rra\n");
+    ft_printf("rra\n");
 }
 
 void    rrb(t_list  **stack_b)
 {
     last_first(stack_b);
-    printf("rrb\n");
+    ft_printf("rrb\n");
 }
 void    rrr(t_list  **stack)
 {
     rrb(stack);
     rrb(stack);
-    printf("rrr\n");
+    ft_printf("rrr\n");
 }

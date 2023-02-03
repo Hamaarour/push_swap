@@ -6,12 +6,12 @@
 /*   By: hamaarou <hamaarou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 15:40:05 by hamaarou          #+#    #+#             */
-/*   Updated: 2023/02/01 23:20:56 by hamaarou         ###   ########.fr       */
+/*   Updated: 2023/02/03 01:42:31 by hamaarou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
-// send top of b to top of a
+// +send top of b to top of a
 
 void	pa(t_list **stack_a, t_list **stack_b)
 {
@@ -26,6 +26,6 @@ void	pa(t_list **stack_a, t_list **stack_b)
 	(*stack_b) = (*stack_b)->next;
 	(*stack_a) = first_b;
 	first_b->next = first_a;
-	printf("pa\n");
+	ft_printf("pa\n");
 }
 

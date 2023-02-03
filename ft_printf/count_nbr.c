@@ -1,31 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pb.c                                               :+:      :+:    :+:   */
+/*   count_nbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hamaarou <hamaarou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/29 15:40:30 by hamaarou          #+#    #+#             */
-/*   Updated: 2023/02/03 01:42:37 by hamaarou         ###   ########.fr       */
+/*   Created: 2022/10/31 13:53:42 by hamaarou          #+#    #+#             */
+/*   Updated: 2023/02/02 18:58:35 by hamaarou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-// +send top of a to top of b
-
-void	pb(t_list **stack_a, t_list **stack_b)
+int	count_nbr(unsigned long nbr, int bs, int sign)
 {
-	t_list *first_a;
-	t_list *first_b;
+	int	count;
 
-	if(stack_a == NULL )
-		return;
-	first_a = NULL;
-	first_a = (*stack_a);
-	first_b = (*stack_b);
-	(*stack_a) = (*stack_a)->next;
-	(*stack_b) = first_a;
-	first_a->next = first_b;
-	ft_printf("pb\n");
+	count = 0;
+	if (nbr == 0)
+		return (1);
+	while (nbr != 0)
+	{
+		nbr /= bs;
+		count++;
+	}
+	if (sign == -1)
+		count++;
+	return (count);
 }

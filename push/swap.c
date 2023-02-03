@@ -13,7 +13,7 @@
 #include "../push_swap.h"
 
 /*
-    swap the 2 top element in a stack
+    +swap the 2 top element in a stack
 */
 void    swap(t_list  *stack)
 {
@@ -27,33 +27,33 @@ void    swap(t_list  *stack)
     }
 }
 /*
-sb (swap b): Swap the first 2 elements at the top of stack b.
-            Do nothing if there is only one or no elements.
++sb (swap b): Swap the first 2 elements at the top of stack b.
+            +Do nothing if there is only one or no elements.
 
 */
 void    sb(t_list **stack_b)
 {
     swap(*stack_b);
-    printf("sb\n");
+    ft_printf("sb\n");
 }
 
 /*
-sa (swap a): Swap the first 2 elements at the top of stack a.
-            Do nothing if there is only one or no elements.
++sa (swap a): Swap the first 2 elements at the top of stack a.
+            +Do nothing if there is only one or no elements.
 
 */
 void    sa(t_list **stack_a)
 {
     swap(*stack_a);
-    printf("sa\n");
+    ft_printf("sa\n");
 }
 
 /*
-    ss : sa and sb at the same time.
+    +ss : sa and sb at the same time.
 */
 void    s_ab(t_list **stack)
 {
     sa(stack);
     sb(stack);
-    printf("ss\n");
+    ft_printf("ss\n");
 }
