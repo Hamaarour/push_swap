@@ -12,6 +12,19 @@
 
 #include "../push_swap.h"
 
+void	error(const char *str, int tebi)
+{
+	while (str[tebi])
+	{
+		if (str[tebi] < '0' || str[tebi] > '9')
+		{
+			ft_printf("idk fih ghayarha\n");
+			exit(1);
+		}
+		tebi++;
+	}
+}
+
 int	ft_atoi(const char *str)
 {
 	int				i;
@@ -24,7 +37,7 @@ int	ft_atoi(const char *str)
 	res = 0;
 	while (str[i] == 32 || (str[i] >= '\t' && str[i] <= '\r'))
 		i++;
-	if (str[i] == '-')
+	if (str[i] == '-' && str[i + 1] != '\0')
 	{
 		n = -1;
 		i++;
@@ -32,22 +45,10 @@ int	ft_atoi(const char *str)
 	else if (str[i] == '+')
 		i++;
 	tebi = i;
-	// while (str[tebi])
-	// {
-	// 	//ft_prtebintf("SBIKSLLA");
-	// 	if (str[tebi] < '0' || str[tebi] > '9')
-	// 	{
-	// 		ft_printf("idk fih ghayarha\n");
-	// 		exit(1);
-	// 	}
-	// 	tebi++;
-	// }
-
+	error(str, tebi);
 	while (str[i] != '\0' && str[i] >= '0' && str[i] <= '9')
 		res = res * 10 + str[i++] - '0';
 	if (res > 9223372036854775807 && n == 1)
 		return (-1);
-	else if (res > 9223372036854775807 && n == -1)
-		return (0);
 	return (res * n);
 }

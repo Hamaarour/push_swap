@@ -6,7 +6,7 @@
 /*   By: hamaarou <hamaarou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 17:31:47 by hamaarou          #+#    #+#             */
-/*   Updated: 2023/02/04 02:20:05 by hamaarou         ###   ########.fr       */
+/*   Updated: 2023/02/04 02:24:42 by hamaarou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,41 +48,45 @@ int	get_index(t_list *stack_a)
 	return (idx);
 }
 
-
-void 	rotate(t_list **stack_a, t_list **stack_b)
+void	rotate(t_list **stack_a, t_list **stack_b)
 {
 	int	j;
 	int	s;
+
 	j = get_index(*stack_a);
 	s = ft_lstsize(*stack_a);
 	if (j > s / 2 && (j - s / 2) != 0)
+	{
 		while (j <= s)
 		{
 			rra(stack_a);
 			j++;
 		}
+	}
 	else if (j <= s / 2 && (s / 2 - j) == 0)
+	{
 		while (j > 0)
 		{
 			ra(stack_a);
 			j--;
 		}
+	}
 	pb(stack_a, stack_b);
 }
+
 void	case_five_numbers(t_list **stack_a, t_list **stack_b, int i)
 {
 	if (i == 4)
 	{
-		rotate(stack_a,stack_b);
+		rotate(stack_a, stack_b);
 		case_three_numbers(stack_a);
 	}
 	else if (i == 5)
 	{
-		rotate(stack_a,stack_b);
-		rotate(stack_a,stack_b);
+		rotate(stack_a, stack_b);
+		rotate(stack_a, stack_b);
 		case_three_numbers(stack_a);
 		pa(stack_a, stack_b);
 	}
 	pa(stack_a, stack_b);
-
 }

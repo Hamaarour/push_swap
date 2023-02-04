@@ -6,7 +6,7 @@
 /*   By: hamaarou <hamaarou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/03 01:28:30 by hamaarou          #+#    #+#             */
-/*   Updated: 2023/02/03 23:54:55 by hamaarou         ###   ########.fr       */
+/*   Updated: 2023/02/04 03:06:35 by hamaarou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 void	bubble_sort(int *arr, int size_stack)
 {
-	int i;
+	int	i;
 	int	j;
-	int temp;
+	int	temp;
 
 	i = 0;
 	while (i < size_stack - 1)
@@ -38,16 +38,16 @@ void	bubble_sort(int *arr, int size_stack)
 
 int	*to_array(t_list *stack_a)
 {
-	int size_stack;
-	t_list *stk;
-	int *arr;
-	int i;
+	int		size_stack;
+	t_list	*stk;
+	int		*arr;
+	int		i;
 
 	i = 0;
 	size_stack = ft_lstsize(stack_a);
 	arr = malloc(sizeof(int) * size_stack);
 	if (!arr)
-		return(0);
+		return (0);
 	stk = (stack_a);
 	while (i < size_stack)
 	{
@@ -75,7 +75,7 @@ void	index_stack(t_list **stack_a)
 		id = 0;
 		while (id < size)
 		{
-			if (tmp_stack->value ==	tab[id])
+			if (tmp_stack->value == tab[id])
 			{
 				tmp_stack->index = id;
 				break ;
@@ -87,7 +87,13 @@ void	index_stack(t_list **stack_a)
 	free(tab);
 }
 
-// void sort_hundred(t_list **stack_a, t_list **stack_b)
-// {
+void sort_hundred(t_list **stack_a, t_list **stack_b)
+{
+	int chunk_1 = ft_lstsize(*stack_a) / 5;
+	int i = 0;
+	t_list *tmp_stack = (*stack_a);
+	while(i < chunk_1)
+	{
 
-// }
+	}
+}

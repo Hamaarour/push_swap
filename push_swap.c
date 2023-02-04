@@ -11,60 +11,43 @@
 /* ************************************************************************** */
 
 #include "push_swap.h"
-// void  check(char **av, t_list **stack_a, int ac)
-// {
-// 	int value;
-// 	int i;
-// 	int	j;
 
-
-// 	i = 2;
-// 	j= 1;
-// 	while (i <= ac)
-// 	{
-// 		value = ft_atoi(av[j]);printf("%d", value);
-// 		push_stack(&(*stack_a), value);
-// 		i++;
-// 		j++;
-// 	}
-// }
 
 int main(int ac, char **av)
 {
-	t_list *stack_a;
-   t_list *stack_b;
-   int value;
-   int i;
-   int j;
+	t_list	*stack_a;
+	t_list	*stack_b;
+	int		value;
+	int		i;
+	int		j;
 
-   stack_a = NULL;
-   stack_b = NULL;
+	stack_a = NULL;
+	stack_b = NULL;
 
-   i = 2;
-   j = 1;
-   if (ac == 1)
-      exit(1);
-   while (i <= ac)
-   {
-      value = ft_atoi(av[j]);
-      push_stack(&stack_a, value);
-      i++;
-      j++;
-   }
+	i = 2;
+	j = 1;
+	if (ac == 1)
+		exit(1);
+	while (i <= ac)
+	{
+		value = ft_atoi(av[j]);
+		push_stack(&stack_a, value);
+		i++;
+		j++;
+	}
 	//check(av,&stack_a, ac);
 	if (ft_lstsize(stack_a) == 5)
 		case_five_numbers(&stack_a, &stack_b, 5);
 	else if (ft_lstsize(stack_a) == 4)
 		case_five_numbers(&stack_a, &stack_b, 4);
-
-   index_stack(&stack_a);
-   while (stack_a)
-   {
-      printf("%d\t%d\n", stack_a->value,stack_a->index);
-      free(stack_a);
-      stack_a = stack_a->next;
-   }
-   printf("*************************\n");
+	index_stack(&stack_a);
+	while (stack_a)
+	{
+		printf("%d\t%d\n", stack_a->value,stack_a->index);
+		free(stack_a);
+		stack_a = stack_a->next;
+	}
+	printf("*************************\n");
    //system("leaks push_swap");
 
    // while (stack_b)
