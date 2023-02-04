@@ -6,7 +6,7 @@
 /*   By: hamaarou <hamaarou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/03 01:28:30 by hamaarou          #+#    #+#             */
-/*   Updated: 2023/02/03 18:26:02 by hamaarou         ###   ########.fr       */
+/*   Updated: 2023/02/03 23:54:55 by hamaarou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,32 @@ int	*to_array(t_list *stack_a)
 	return (arr);
 }
 
+void	index_stack(t_list **stack_a)
+{
+	t_list	*tmp_stack;
+	int		id;
+	int		*tab;
+	int		size;
 
+	tmp_stack = *stack_a;
+	tab = to_array(*stack_a);
+	size = ft_lstsize(*stack_a);
+	while (tmp_stack)
+	{
+		id = 0;
+		while (id < size)
+		{
+			if (tmp_stack->value ==	tab[id])
+			{
+				tmp_stack->index = id;
+				break ;
+			}
+			id++;
+		}
+		tmp_stack = tmp_stack->next;
+	}
+	free(tab);
+}
 
 // void sort_hundred(t_list **stack_a, t_list **stack_b)
 // {
