@@ -6,7 +6,7 @@
 /*   By: hamaarou <hamaarou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 17:31:47 by hamaarou          #+#    #+#             */
-/*   Updated: 2023/02/04 02:24:42 by hamaarou         ###   ########.fr       */
+/*   Updated: 2023/02/04 19:36:14 by hamaarou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ void	rotate(t_list **stack_a, t_list **stack_b)
 	}
 	else if (j <= s / 2 && (s / 2 - j) == 0)
 	{
-		while (j > 0)
+		while (j > 1)
 		{
 			ra(stack_a);
 			j--;
@@ -90,3 +90,4 @@ void	case_five_numbers(t_list **stack_a, t_list **stack_b, int i)
 	}
 	pa(stack_a, stack_b);
 }
+// + 5 4 7 85 1

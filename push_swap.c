@@ -40,7 +40,10 @@ int main(int ac, char **av)
 		case_five_numbers(&stack_a, &stack_b, 5);
 	else if (ft_lstsize(stack_a) == 4)
 		case_five_numbers(&stack_a, &stack_b, 4);
-	index_stack(&stack_a);
+	else if (ft_lstsize(stack_a) < 100)
+	{
+		sort_hundred(&stack_a, &stack_b);
+	}
 	while (stack_a)
 	{
 		printf("%d\t%d\n", stack_a->value,stack_a->index);
@@ -50,12 +53,12 @@ int main(int ac, char **av)
 	printf("*************************\n");
    //system("leaks push_swap");
 
-   // while (stack_b)
-   // {
-   //    printf("%d\n", stack_b->value);
-   //    free(stack_b);
-   //    stack_b = stack_b->next;
-   // }
+   while (stack_b)
+   {
+      printf("%d\n", stack_b->value);
+      free(stack_b);
+      stack_b = stack_b->next;
+   }
 
 
 

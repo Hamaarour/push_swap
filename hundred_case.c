@@ -6,7 +6,7 @@
 /*   By: hamaarou <hamaarou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/03 01:28:30 by hamaarou          #+#    #+#             */
-/*   Updated: 2023/02/04 03:06:35 by hamaarou         ###   ########.fr       */
+/*   Updated: 2023/02/05 18:12:12 by hamaarou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,13 +87,52 @@ void	index_stack(t_list **stack_a)
 	free(tab);
 }
 
-void sort_hundred(t_list **stack_a, t_list **stack_b)
+int	find(t_list *stack_a, int val)
 {
-	int chunk_1 = ft_lstsize(*stack_a) / 5;
-	int i = 0;
-	t_list *tmp_stack = (*stack_a);
-	while(i < chunk_1)
-	{
+	t_list	*tmp_stack;
+	int i;
 
+	i = 0;
+	tmp_stack = stack_a;
+	while(tmp_stack)
+	{
+		if(tmp_stack->value == val)
+			return (i);
+		i++;
+		tmp_stack= tmp_stack->next;
 	}
+	return 0;
+
+}
+
+void	sort_hundred(t_list **stack_a, t_list **stack_b)
+{
+	int		chunk;
+	int		i;
+	t_list	*tmp_stack;
+	int j;
+
+	index_stack(stack_a);
+	chunk = ft_lstsize(*stack_a) / 5;
+	tmp_stack = (*stack_a);
+	while (tmp_stack)
+	{
+		j = 0;
+		while (j < 20)
+		{
+			if (tmp_stack->index < chunk)
+			{
+				i = find(*stack_a,tmp_stack->value);
+				while (i > 0)
+				{
+					ra(stack_a);
+					i--;
+				}
+				//pb(stack_a,stack_b);
+			}
+			j++;
+		}
+		tmp_stack = tmp_stack->next;
+	}
+	(void)stack_b;
 }
