@@ -6,7 +6,7 @@
 /*   By: hamaarou <hamaarou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/03 01:28:30 by hamaarou          #+#    #+#             */
-/*   Updated: 2023/02/05 18:12:12 by hamaarou         ###   ########.fr       */
+/*   Updated: 2023/02/06 16:28:34 by hamaarou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,32 +107,28 @@ int	find(t_list *stack_a, int val)
 
 void	sort_hundred(t_list **stack_a, t_list **stack_b)
 {
-	int		chunk;
-	int		i;
-	t_list	*tmp_stack;
-	int j;
+	int	size;
+	int	p;
+	int	i;
 
-	index_stack(stack_a);
-	chunk = ft_lstsize(*stack_a) / 5;
-	tmp_stack = (*stack_a);
-	while (tmp_stack)
+	size = ft_lstsize(*stack_a);
+	p = 0;
+	i = 0;
+	while (size > 6 && i < size && p < size / 2)
 	{
-		j = 0;
-		while (j < 20)
+		if ((*stack_a)->index <= size / 2)
 		{
-			if (tmp_stack->index < chunk)
-			{
-				i = find(*stack_a,tmp_stack->value);
-				while (i > 0)
-				{
-					ra(stack_a);
-					i--;
-				}
-				//pb(stack_a,stack_b);
-			}
-			j++;
+			pb(stack_a, stack_b);
+			p++;
 		}
-		tmp_stack = tmp_stack->next;
+		else
+			ra(stack_a);
+		i++;
 	}
-	(void)stack_b;
+	while (size - p > 3)
+	{
+		pb(stack_a, stack_b);
+		p++;
+	}
+
 }

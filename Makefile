@@ -13,7 +13,7 @@
 
 NAME=push_swap
 CC=cc
-CFLAGS=-Wall -Wextra -Werror
+#CFLAGS=-Wall -Wextra -Werror
 
 SRC=ft_printf/count_nbr.c ft_printf/ft_putchar.c ft_printf/ft_putnbr.c ft_printf/ft_putstr.c ft_printf/ft_putnbr_hex.c ft_printf/ft_printf.c \
 	lib/ft_atoi.c lib/ft_calloc.c lib/ft_split.c lib/ft_strlen.c lib/ft_substr.c  lib/ft_strdup.c lib/ft_strchr.c \
