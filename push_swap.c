@@ -35,31 +35,30 @@ int main(int ac, char **av)
 		i++;
 		j++;
 	}
+	index_stack(&stack_a);
 	//check(av,&stack_a, ac);
+	// t_list *tmp = (stack_a);
+	// while (tmp)
+	// {
+	// 	printf("%d\t%d\n", tmp->value,tmp->index);
+	// 	//free(tmp);
+	// 	tmp = tmp->next;
+	// }
 	if (ft_lstsize(stack_a) == 5)
 		case_five_numbers(&stack_a, &stack_b, 5);
 	else if (ft_lstsize(stack_a) == 4)
 		case_five_numbers(&stack_a, &stack_b, 4);
-	else if (ft_lstsize(stack_a) < 100)
-	{
+	else if (ft_lstsize(stack_a) <= 10)
+		sort_ten(&stack_a, &stack_b);
+	else if (ft_lstsize(stack_a) > 10)
 		sort_hundred(&stack_a, &stack_b);
-	}
-	while (stack_a)
-	{
-		printf("%d\t%d\n", stack_a->value,stack_a->index);
-		free(stack_a);
-		stack_a = stack_a->next;
-	}
-	printf("*************************\n");
-   //system("leaks push_swap");
+// 	printf("*************************\n");
+//  system("leaks push_swap");
 
-   while (stack_b)
-   {
-      printf("%d\n", stack_b->value);
-      free(stack_b);
-      stack_b = stack_b->next;
-   }
-
-
-
+//    while (stack_b)
+//    {
+//       printf("%d\n", stack_b->value);
+//       free(stack_b);
+//       stack_b = stack_b->next;
+//    }
 }

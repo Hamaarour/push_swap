@@ -6,7 +6,7 @@
 /*   By: hamaarou <hamaarou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/03 01:28:30 by hamaarou          #+#    #+#             */
-/*   Updated: 2023/02/06 16:28:34 by hamaarou         ###   ########.fr       */
+/*   Updated: 2023/02/07 03:11:01 by hamaarou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,7 +87,7 @@ void	index_stack(t_list **stack_a)
 	free(tab);
 }
 
-int	find(t_list *stack_a, int val)
+int	return_index(t_list *stack_a, int val)
 {
 	t_list	*tmp_stack;
 	int i;
@@ -105,30 +105,84 @@ int	find(t_list *stack_a, int val)
 
 }
 
-void	sort_hundred(t_list **stack_a, t_list **stack_b)
+int	get_min_index_in_stack(t_list *stack_a)
+{
+	t_list *tmp;
+	int m;
+	int s;
+
+	tmp = stack_a;
+	s= tmp->value;
+	while(tmp->next)
+	{
+		if (tmp->value < tmp->next->value && tmp->value < s)
+			s = tmp->value;
+		tmp = tmp->next;
+	}
+	m = return_index(stack_a, s);
+	return (m);
+}
+
+// push to stack b all the element exept last three
+void	sort_ten(t_list **stack_a, t_list **stack_b)
 {
 	int	size;
-	int	p;
 	int	i;
+	t_list *tmp;
+	int j = 0;
 
 	size = ft_lstsize(*stack_a);
-	p = 0;
 	i = 0;
-	while (size > 6 && i < size && p < size / 2)
+	index_stack(stack_a);
+	while ((*stack_a) )
 	{
-		if ((*stack_a)->index <= size / 2)
+		if ((*stack_a)->index == i)
 		{
 			pb(stack_a, stack_b);
-			p++;
+			i++;
 		}
 		else
 			ra(stack_a);
-		i++;
 	}
-	while (size - p > 3)
-	{
-		pb(stack_a, stack_b);
-		p++;
-	}
+	while (*stack_b)
+		pa(stack_a, stack_b);
+}
+int	gg(int size)
+{
+	if(size == 500)
+		return (size / 11);
+	else if (size > 200)
+		return(size / 5);
+	else if (size > 100)
+		return(size / 4);
+	else if (size > 10)
+		return (size / 2);
+	return (1);
+}
+void	sort_hundred(t_list **stack_a, t_list **stack_b)
+{
+	int size;
+	int i;
+	int c;
+	int sigment = 0;
 
+	size = ft_lstsize(*stack_a);
+	c = 0;
+	while (*stack_a)
+	{
+		i = 0;
+		sigment += gg(size);
+		while(i < (sigment - c) + 1)
+		{
+			if ((*stack_a)->index >= c && (*stack_a)->index <= sigment)
+			{
+				pb(stack_a, stack_b);
+				i++;
+				size--;
+			}
+			else
+				ra(stack_a);
+		}
+		c = sigment + 1;
+	}
 }

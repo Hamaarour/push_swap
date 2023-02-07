@@ -15,7 +15,6 @@
 
 #include <unistd.h>
 #include <stdlib.h>
-#include <stdint.h>
 #include <stdio.h>
 #include <fcntl.h>
 #include <errno.h>
@@ -73,6 +72,6 @@ int			ft_atoi(const char *str);
 //+------------------------tests--------------------
 int			*to_array(t_list *stack_a);
 void	index_stack(t_list **stack_a);
+void	sort_ten(t_list **stack_a, t_list **stack_b);
 void	sort_hundred(t_list **stack_a, t_list **stack_b);
-
 #endif
