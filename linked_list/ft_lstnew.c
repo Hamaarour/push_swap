@@ -12,14 +12,14 @@
 
 #include "../push_swap.h"
 
-t_list *ft_lstnew(int content)
+t_list	*ft_lstnew(int content)
 {
-    t_list *elt;
+	t_list	*elt;
 
-    elt = (t_list *)malloc(sizeof(*elt));
-    if (elt == NULL)
-        return (NULL);
-    elt->value = content;
-    elt->next = NULL;
-    return (elt);
+	elt = (t_list *)malloc(sizeof(*elt));
+	if (elt == NULL)
+		return (NULL);
+	elt->value = content;
+	elt->next = NULL;
+	return (elt);
 }

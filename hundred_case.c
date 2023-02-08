@@ -6,7 +6,7 @@
 /*   By: hamaarou <hamaarou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/03 01:28:30 by hamaarou          #+#    #+#             */
-/*   Updated: 2023/02/07 03:11:01 by hamaarou         ###   ########.fr       */
+/*   Updated: 2023/02/09 00:36:51 by hamaarou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,54 +87,19 @@ void	index_stack(t_list **stack_a)
 	free(tab);
 }
 
-int	return_index(t_list *stack_a, int val)
-{
-	t_list	*tmp_stack;
-	int i;
-
-	i = 0;
-	tmp_stack = stack_a;
-	while(tmp_stack)
-	{
-		if(tmp_stack->value == val)
-			return (i);
-		i++;
-		tmp_stack= tmp_stack->next;
-	}
-	return 0;
-
-}
-
-int	get_min_index_in_stack(t_list *stack_a)
-{
-	t_list *tmp;
-	int m;
-	int s;
-
-	tmp = stack_a;
-	s= tmp->value;
-	while(tmp->next)
-	{
-		if (tmp->value < tmp->next->value && tmp->value < s)
-			s = tmp->value;
-		tmp = tmp->next;
-	}
-	m = return_index(stack_a, s);
-	return (m);
-}
-
 // push to stack b all the element exept last three
 void	sort_ten(t_list **stack_a, t_list **stack_b)
 {
-	int	size;
-	int	i;
-	t_list *tmp;
-	int j = 0;
+	int		size;
+	int		i;
+	t_list	*tmp;
+	int		j;
 
+	j = 0;
 	size = ft_lstsize(*stack_a);
 	i = 0;
 	index_stack(stack_a);
-	while ((*stack_a) )
+	while (*stack_a)
 	{
 		if ((*stack_a)->index == i)
 		{
@@ -147,36 +112,48 @@ void	sort_ten(t_list **stack_a, t_list **stack_b)
 	while (*stack_b)
 		pa(stack_a, stack_b);
 }
+
 int	gg(int size)
 {
-	if(size == 500)
+	if (size == 500)
 		return (size / 11);
 	else if (size > 200)
-		return(size / 5);
+		return (size / 5);
 	else if (size > 100)
-		return(size / 4);
+		return (size / 4);
 	else if (size > 10)
 		return (size / 2);
 	return (1);
 }
+
+void	rotate_b(t_list **a, t_list **b, int index, int size_b)
+{
+	if (index < (size_b / 2))
+		rb(b);
+}
+
 void	sort_hundred(t_list **stack_a, t_list **stack_b)
 {
-	int size;
-	int i;
-	int c;
-	int sigment = 0;
+	int		size;
+	t_list	*hd;
+	int		i;
+	int		c;
+	int		sigment;
 
+	sigment = 0;
 	size = ft_lstsize(*stack_a);
 	c = 0;
 	while (*stack_a)
 	{
 		i = 0;
 		sigment += gg(size);
-		while(i < (sigment - c) + 1)
+		while (i < (sigment - c) + 1)
 		{
 			if ((*stack_a)->index >= c && (*stack_a)->index <= sigment)
 			{
 				pb(stack_a, stack_b);
+				hd = *stack_b;
+				rotate_b(stack_a, stack_b, hd->index, (sigment + c));
 				i++;
 				size--;
 			}

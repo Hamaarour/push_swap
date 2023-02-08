@@ -29,32 +29,33 @@
 +element now
 */
 
-void reverseList(t_list **stack)
+void	reverselist(t_list **stack)
 {
-   t_list *first;
-    if (*stack == NULL || (*stack)->next == NULL)
-        return;
-    first = *stack;
-    *stack = first->next;
-    lst_last(*stack)->next = first;
-    first->next = NULL;
+	t_list	*first;
+
+	if (*stack == NULL || (*stack)->next == NULL)
+		return ;
+	first = *stack;
+	*stack = first->next;
+	lst_last(*stack)->next = first;
+	first->next = NULL;
 }
 
-void    ra(t_list **stack_a)
+void	ra(t_list **stack_a)
 {
-    reverseList(stack_a);
-    ft_printf("ra\n");
+	reverseList(stack_a);
+	ft_printf("ra\n");
 }
 
-void    rb(t_list **stack_b)
+void	rb(t_list **stack_b)
 {
-    reverseList(stack_b);
-    ft_printf("rb\n");
+	reverseList(stack_b);
+	ft_printf("rb\n");
 }
 
-void    rr(t_list **stack_ab)
+void	rr(t_list **stack_ab)
 {
-    ra(stack_ab);
-    rb(stack_ab);
-    ft_printf("rr\n");
+	ra(stack_ab);
+	rb(stack_ab);
+	ft_printf("rr\n");
 }

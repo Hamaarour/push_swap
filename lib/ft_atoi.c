@@ -18,11 +18,17 @@ void	error(const char *str, int tebi)
 	{
 		if (str[tebi] < '0' || str[tebi] > '9')
 		{
-			ft_printf("idk fih ghayarha\n");
+			ft_printf("Error\n");
 			exit(1);
 		}
 		tebi++;
 	}
+}
+
+void	error_max_int(void)
+{
+	ft_printf("Error\n");
+	exit(1);
 }
 
 int	ft_atoi(const char *str)
@@ -48,7 +54,7 @@ int	ft_atoi(const char *str)
 	error(str, tebi);
 	while (str[i] != '\0' && str[i] >= '0' && str[i] <= '9')
 		res = res * 10 + str[i++] - '0';
-	if (res > 9223372036854775807 && n == 1)
-		return (-1);
+	if (res > 2147483647 && n == 1)
+		error_max_int();
 	return (res * n);
 }

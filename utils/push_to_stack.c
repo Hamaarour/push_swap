@@ -12,7 +12,7 @@
 
 #include "../push_swap.h"
 
-void push_stack(t_list **stack, int value)
+void	push_stack(t_list **stack, int value)
 {
-   ft_lstadd_back(stack, ft_lstnew(value));
+	ft_lstadd_back(stack, ft_lstnew(value));
 }

@@ -6,7 +6,7 @@
 /*   By: hamaarou <hamaarou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 15:40:30 by hamaarou          #+#    #+#             */
-/*   Updated: 2023/02/03 01:42:37 by hamaarou         ###   ########.fr       */
+/*   Updated: 2023/02/09 00:32:30 by hamaarou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,11 @@
 
 void	pb(t_list **stack_a, t_list **stack_b)
 {
-	t_list *first_a;
-	t_list *first_b;
+	t_list	*first_a;
+	t_list	*first_b;
 
-	if(stack_a == NULL )
-		return;
+	if (stack_a == NULL )
+		return ;
 	first_a = NULL;
 	first_a = (*stack_a);
 	first_b = (*stack_b);

@@ -21,6 +21,7 @@
 #include <stdarg.h>
 #include <sys/types.h>
 
+#include <limits.h>
 typedef struct node
 {
 	int value;
@@ -74,4 +75,10 @@ int			*to_array(t_list *stack_a);
 void	index_stack(t_list **stack_a);
 void	sort_ten(t_list **stack_a, t_list **stack_b);
 void	sort_hundred(t_list **stack_a, t_list **stack_b);
+void	from_b_to_a(t_list **stack_a, t_list **stack_b);
+
+
+//+------------------------Eroors--------------------
+void	duplicate(t_list *stack_a);
+void	is_sorted(t_list *stack_a);
 #endif
