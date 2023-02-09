@@ -6,11 +6,11 @@
 /*   By: hamaarou <hamaarou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 15:05:08 by hamaarou          #+#    #+#             */
-/*   Updated: 2023/01/30 19:39:56 by hamaarou         ###   ########.fr       */
+/*   Updated: 2023/02/09 17:06:55 by hamaarou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 void	case_three_numbers(t_list **stack_a)
 {

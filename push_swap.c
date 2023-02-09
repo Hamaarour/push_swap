@@ -39,15 +39,6 @@ int main(int ac, char **av)
 	duplicate(stack_a);
 	is_sorted(stack_a);
 	index_stack(&stack_a);
-	//check(av,&stack_a, ac);
-	// t_list *tmp = (stack_a);
-	// while (tmp)
-	// {
-	// 	printf("%d\t%d\n", tmp->value,tmp->index);
-	// 	free(tmp);
-	// 	tmp = tmp->next;
-	// }
-	//printf("%d\n",stack_a->value);
 	if (ft_lstsize(stack_a) == 5)
 		case_five_numbers(&stack_a, &stack_b, 5);
 	else if (ft_lstsize(stack_a) == 4)
@@ -56,15 +47,9 @@ int main(int ac, char **av)
 		sort_ten(&stack_a, &stack_b);
 	else if (ft_lstsize(stack_a) > 10)
 		sort_hundred(&stack_a, &stack_b);
-	//from_b_to_a(&stack_a, &stack_b);
+	from_b_to_a(&stack_a, &stack_b);
+	system("leaks push_swap");
 
-//system("leaks push_swap");
-// 	printf("*************************\n");
 
-//    while (stack_b)
-//    {
-//       printf("%d\n", stack_b->value);
-//       free(stack_b);
-//       stack_b = stack_b->next;
-//    }
+
 }

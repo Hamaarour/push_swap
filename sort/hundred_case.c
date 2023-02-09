@@ -6,11 +6,11 @@
 /*   By: hamaarou <hamaarou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/03 01:28:30 by hamaarou          #+#    #+#             */
-/*   Updated: 2023/02/09 00:36:51 by hamaarou         ###   ########.fr       */
+/*   Updated: 2023/02/09 17:06:48 by hamaarou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 void	bubble_sort(int *arr, int size_stack)
 {
@@ -92,7 +92,7 @@ void	sort_ten(t_list **stack_a, t_list **stack_b)
 {
 	int		size;
 	int		i;
-	t_list	*tmp;
+	//t_list	*tmp;
 	int		j;
 
 	j = 0;
@@ -128,6 +128,7 @@ int	gg(int size)
 
 void	rotate_b(t_list **a, t_list **b, int index, int size_b)
 {
+	(void)a;
 	if (index < (size_b / 2))
 		rb(b);
 }

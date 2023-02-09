@@ -6,11 +6,11 @@
 /*   By: hamaarou <hamaarou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/08 18:14:27 by hamaarou          #+#    #+#             */
-/*   Updated: 2023/02/08 22:58:48 by hamaarou         ###   ########.fr       */
+/*   Updated: 2023/02/09 18:02:37 by hamaarou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 void	bubble_sort_des(int *arr, int size_stack)
 {
@@ -63,34 +63,50 @@ int	*b_to_array(t_list *stack_b)
 int	find_max_in_b(t_list *stack_b)
 {
 	t_list	*temp;
-	temp = stack_b;
 
-	int max = 0;
-    while (temp)
-    {
-        if (temp->value > max)
-            max = temp->value;
-        temp = temp->next;
-    }
-    return (max);
+	temp = stack_b;
+	int max = temp->value;
+	while (temp)
+	{
+		if (temp->value > max)
+			max = temp->value;
+		temp = temp->next;
+	}
+	return (max);
 }
+
+int	is_max_in_b(t_list *stack_b, int val_max)
+{
+	int i;
+
+	i = 0;
+	while (stack_b)
+	{
+		if (stack_b->value == val_max)
+			return (i);
+		stack_b = stack_b -> next;
+	}
+	return (-1);
+
+}
+
 int	return_index_of_max(t_list *stack_b)
 {
 	t_list	*tmp;
-	int		index;
-	int max;
+		int		index;
+		int max;
 
-	index = 0;
-	tmp = stack_b;
-	max = find_max_in_b(tmp);
-	while (tmp)
-	{
-		if (tmp->value == max)
-			return (index);
-		index++;
-		tmp = tmp->next;
-	}
-	return (-1);
+		index = 0;
+		tmp = stack_b;
+		max = find_max_in_b(tmp);
+		while (tmp)
+		{
+			if (tmp->value == max)
+				return (index);
+			index++;
+			tmp = tmp->next;
+		}
+		return (-1);
 }
 
 void	put_max_b_in_top(t_list **stack_b)
@@ -105,7 +121,7 @@ void	put_max_b_in_top(t_list **stack_b)
 	stack_tmp = *stack_b;
 	size = ft_lstsize(*stack_b);
 	index = return_index_of_max(*stack_b);
-	if (index < size / 2)
+	if (index < (size / 2))
 	{
 		while (index > 0)
 		{
@@ -115,47 +131,53 @@ void	put_max_b_in_top(t_list **stack_b)
 	}
 	else
 	{
-		while (index >= 0)
+		while (index < size)
 		{
 			rrb(stack_b);
-			index--;
+			index++;
 		}
 	}
 }
-
 
 void	from_b_to_a(t_list **stack_a, t_list **stack_b)
 {
 	int	*arr;
 	int	i;
 	int	counter;
+	int	index;
 
 	i = 0;
 	counter = 0;
 	arr = b_to_array(*stack_b);
 	while (*stack_b)
 	{
-		// if ()
-		// {
-		// 	if ((*stack_b)->value == arr[i])
-		// 	{
-		// 		pa(stack_a, stack_b);
-		// 		i++;
-		// 	}
-		// 	else if (counter == 0 || (*stack_b)->value > (*stack_a)->value)
-		// 	{
-		// 		pa(stack_a, stack_b);
-		// 		ra(stack_a);
-		// 		counter++;
-		// 	}
-		// 	else
-		// 		put_max_b_in_top(stack_b);
-		// }
-		// else
-		// {
-
-		// }
+		index = is_max_in_b(*stack_b, arr[i]);
+		if (index != -1)
+		{
+			if ((*stack_b)->value == arr[i])
+			{
+				pa(stack_a, stack_b);
+				i++;
+			}
+			else if (counter == 0 || (*stack_b)->value > lst_last_value(*stack_a))
+			{
+				pa(stack_a, stack_b);
+				ra(stack_a);
+				counter++;
+			}
+			else
+				put_max_b_in_top(stack_b);
+		}
+		else
+		{
+			rra(stack_a);
+			counter--;
+			i++;
+		}
 	}
-	//printf("%d\n",(*stack_b)->value);
-
+	while (counter > 0)
+	{
+		rra(stack_a);
+		counter--;
+	}
 }

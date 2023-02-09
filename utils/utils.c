@@ -6,11 +6,11 @@
 /*   By: hamaarou <hamaarou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/08 23:00:53 by hamaarou          #+#    #+#             */
-/*   Updated: 2023/02/09 00:04:10 by hamaarou         ###   ########.fr       */
+/*   Updated: 2023/02/09 17:07:06 by hamaarou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 void	duplicate(t_list *stack_a)
 {
