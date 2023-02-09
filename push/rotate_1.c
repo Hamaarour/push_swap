@@ -43,13 +43,13 @@ void	reverselist(t_list **stack)
 
 void	ra(t_list **stack_a)
 {
-	reverseList(stack_a);
+	reverselist(stack_a);
 	ft_printf("ra\n");
 }
 
 void	rb(t_list **stack_b)
 {
-	reverseList(stack_b);
+	reverselist(stack_b);
 	ft_printf("rb\n");
 }
 

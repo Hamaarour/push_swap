@@ -31,6 +31,16 @@ void	error_max_int(void)
 	exit(1);
 }
 
+int	check_num(long num)
+{
+	if (num > INT_MAX || num < INT_MIN)
+	{
+		error_max_int();
+		return (0);
+	}
+	return (num);
+}
+
 int	ft_atoi(const char *str)
 {
 	int				i;
@@ -54,7 +64,5 @@ int	ft_atoi(const char *str)
 	error(str, tebi);
 	while (str[i] != '\0' && str[i] >= '0' && str[i] <= '9')
 		res = res * 10 + str[i++] - '0';
-	if (res > 2147483647 && n == 1)
-		error_max_int();
-	return (res * n);
+	return (check_num(res * n));
 }

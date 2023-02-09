@@ -40,7 +40,7 @@ void	swap(t_list *stack);
 void	sa(t_list **stack_a);
 void	sb(t_list **stack_b);
 void	s_ab(t_list **stack);
-void	reverseList(t_list **stack_head);
+void	reverselist(t_list **stack_head);
 void	ra(t_list **stack_a);
 void	rb(t_list **stack_b);
 void	rr(t_list **stack_ab);

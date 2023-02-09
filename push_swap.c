@@ -36,8 +36,8 @@ int main(int ac, char **av)
 		i++;
 		j++;
 	}
-	//duplicate(stack_a);
-	//is_sorted(stack_a);
+	duplicate(stack_a);
+	is_sorted(stack_a);
 	index_stack(&stack_a);
 	//check(av,&stack_a, ac);
 	// t_list *tmp = (stack_a);
@@ -56,7 +56,7 @@ int main(int ac, char **av)
 		sort_ten(&stack_a, &stack_b);
 	else if (ft_lstsize(stack_a) > 10)
 		sort_hundred(&stack_a, &stack_b);
-	from_b_to_a(&stack_a, &stack_b);
+	//from_b_to_a(&stack_a, &stack_b);
 
 //system("leaks push_swap");
 // 	printf("*************************\n");
