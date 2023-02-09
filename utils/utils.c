@@ -6,7 +6,7 @@
 /*   By: hamaarou <hamaarou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/08 23:00:53 by hamaarou          #+#    #+#             */
-/*   Updated: 2023/02/09 17:07:06 by hamaarou         ###   ########.fr       */
+/*   Updated: 2023/02/09 20:02:20 by hamaarou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	duplicate(t_list *stack_a)
 	while (tmp)
 	{
 		tmp2 = tmp;
-		while(tmp2->next != NULL)
+		while (tmp2->next != NULL)
 		{
 			if (tmp2->next->value == tmp->value)
 			{
@@ -30,7 +30,7 @@ void	duplicate(t_list *stack_a)
 			}
 			tmp2 = tmp2->next;
 		}
-		tmp =  tmp->next;
+		tmp = tmp->next;
 	}
 }
 
@@ -52,5 +52,4 @@ void	is_sorted(t_list *stack_a)
 		ft_printf("Error\n");
 		exit(1);
 	}
-
 }

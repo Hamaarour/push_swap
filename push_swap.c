@@ -12,9 +12,7 @@
 
 #include "push_swap.h"
 
-
-
-int main(int ac, char **av)
+int	main(int ac, char **av)
 {
 	t_list	*stack_a;
 	t_list	*stack_b;
@@ -24,7 +22,6 @@ int main(int ac, char **av)
 
 	stack_a = NULL;
 	stack_b = NULL;
-
 	i = 2;
 	j = 1;
 	if (ac == 1)
@@ -48,8 +45,4 @@ int main(int ac, char **av)
 	else if (ft_lstsize(stack_a) > 10)
 		sort_hundred(&stack_a, &stack_b);
 	from_b_to_a(&stack_a, &stack_b);
-	system("leaks push_swap");
-
-
-
 }
