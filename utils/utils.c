@@ -6,7 +6,7 @@
 /*   By: hamaarou <hamaarou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/08 23:00:53 by hamaarou          #+#    #+#             */
-/*   Updated: 2023/02/09 20:02:20 by hamaarou         ###   ########.fr       */
+/*   Updated: 2023/02/10 20:23:02 by hamaarou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,8 +48,10 @@ void	is_sorted(t_list *stack_a)
 		current = current->next;
 	}
 	if (i == ft_lstsize(stack_a) - 1)
-	{
-		ft_printf("Error\n");
-		exit(1);
-	}
+		exit(0);
 }
+
+// void	check_args()
+// {
+
+// }

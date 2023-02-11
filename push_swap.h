@@ -38,6 +38,14 @@ typedef struct var
 	int		sigment;
 }	t_vars;
 
+typedef struct var_to_a
+{
+	int	*arr;
+	int	i;
+	int	counter;
+	int	index;
+}	t_vars_to_a;
+
 t_list	*ft_lstnew(int content);
 void	ft_lstadd_back(t_list **lst, t_list *new);
 void	ft_lstadd_front(t_list **lst, t_list *new);

@@ -6,7 +6,7 @@
 /*   By: hamaarou <hamaarou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/08 18:14:27 by hamaarou          #+#    #+#             */
-/*   Updated: 2023/02/09 20:32:38 by hamaarou         ###   ########.fr       */
+/*   Updated: 2023/02/11 00:21:19 by hamaarou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,47 +41,46 @@ void	put_max_b_in_top(t_list **stack_b)
 	}
 }
 
+void	from_b_to_a_helper(t_list **stack_a, t_list **stack_b, t_vars_to_a *var)
+{
+	if ((*stack_b)->value == var->arr[var->i])
+	{
+		pa(stack_a, stack_b);
+		var->i++;
+	}
+	else if (var->counter == 0 || (*stack_b)->value > lst_last_value(*stack_a))
+	{
+		pa(stack_a, stack_b);
+		ra(stack_a);
+		var->counter++;
+	}
+	else
+		put_max_b_in_top(stack_b);
+}
+
 void	from_b_to_a(t_list **stack_a, t_list **stack_b)
 {
-	int	*arr;
-	int	i;
-	int	counter;
-	int	index;
+	t_vars_to_a	var;
 
-	i = 0;
-	counter = 0;
-	arr = b_to_array(*stack_b);
+	var.i = 0;
+	var.counter = 0;
+	var.arr = b_to_array(*stack_b);
 	while (*stack_b)
 	{
-		index = is_max_in_b(*stack_b, arr[i]);
-		if (index != -1)
-		{
-			if ((*stack_b)->value == arr[i])
-			{
-				pa(stack_a, stack_b);
-				i++;
-			}
-			else if (counter == 0
-				|| (*stack_b)->value > lst_last_value(*stack_a))
-			{
-				pa(stack_a, stack_b);
-				ra(stack_a);
-				counter++;
-			}
-			else
-				put_max_b_in_top(stack_b);
-		}
+		var.index = is_max_in_b(*stack_b, var.arr[var.i]);
+		if (var.index != -1)
+			from_b_to_a_helper(stack_a, stack_b, &var);
 		else
 		{
 			rra(stack_a);
-			counter--;
-			i++;
+			var.counter--;
+			var.i++;
 		}
 	}
-	free(arr);
-	while (counter > 0)
+	free(var.arr);
+	while (var.counter > 0)
 	{
 		rra(stack_a);
-		counter--;
+		var.counter--;
 	}
 }
