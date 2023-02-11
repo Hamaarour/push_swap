@@ -11,9 +11,6 @@
 /* ************************************************************************** */
 
 #include "../push_swap.h"
-/*
-	+swap the 2 top element in a stack
-*/
 
 void	swap(t_list *stack)
 {
@@ -27,34 +24,23 @@ void	swap(t_list *stack)
 	}
 }
 
-/*
-+sb (swap b): Swap the first 2 elements at the top of stack b.
-			+Do nothing if there is only one or no elements.
-
-*/
-void	sb(t_list **stack_b)
+void	sb(t_list **stack_b, int p)
 {
 	swap(*stack_b);
-	ft_printf("sb\n");
+	if (p == 1)
+		ft_printf("sb\n");
 }
 
-/*
-+sa (swap a): Swap the first 2 elements at the top of stack a.
-			+Do nothing if there is only one or no elements.
-
-*/
-void	sa(t_list **stack_a)
+void	sa(t_list **stack_a, int p)
 {
 	swap(*stack_a);
-	ft_printf("sa\n");
+	if (p == 1)
+		ft_printf("sa\n");
 }
 
-/*
-	+ss : sa and sb at the same time.
-*/
 void	s_ab(t_list **stack)
 {
-	sa(stack);
-	sb(stack);
+	sa(stack, 0);
+	sb(stack, 0);
 	ft_printf("ss\n");
 }

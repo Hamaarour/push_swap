@@ -30,21 +30,23 @@ void	last_first(t_list **stack)
 	*stack = current;
 }
 
-void	rra(t_list **stack_a)
+void	rra(t_list **stack_a, int p)
 {
 	last_first(stack_a);
-	ft_printf("rra\n");
+	if (p == 1)
+		ft_printf("rra\n");
 }
 
-void	rrb(t_list **stack_b)
+void	rrb(t_list **stack_b, int p)
 {
 	last_first(stack_b);
-	ft_printf("rrb\n");
+	if (p == 1)
+		ft_printf("rrb\n");
 }
 
 void	rrr(t_list **stack)
 {
-	rrb(stack);
-	rrb(stack);
+	rra(stack, 0);
+	rrb(stack, 0);
 	ft_printf("rrr\n");
 }

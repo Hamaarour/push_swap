@@ -6,7 +6,7 @@
 /*   By: hamaarou <hamaarou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/03 01:28:30 by hamaarou          #+#    #+#             */
-/*   Updated: 2023/02/09 20:58:35 by hamaarou         ###   ########.fr       */
+/*   Updated: 2023/02/11 17:57:51 by hamaarou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	rotate_b(t_list **a, t_list **b, int index, int size_b)
 {
 	(void)a;
 	if (index < (size_b / 2))
-		rb(b);
+		rb(b, 1);
 }
 
 void	sort_hundred(t_list **stack_a, t_list **stack_b)
@@ -54,7 +54,7 @@ void	sort_hundred(t_list **stack_a, t_list **stack_b)
 				v.size--;
 			}
 			else
-				ra(stack_a);
+				ra(stack_a, 1);
 		}
 		v.c = v.sigment + 1;
 	}

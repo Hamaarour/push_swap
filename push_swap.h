@@ -17,9 +17,7 @@
 # include <stdlib.h>
 # include <stdio.h>
 # include <fcntl.h>
-# include <errno.h>
 # include <stdarg.h>
-# include <sys/types.h>
 # include <limits.h>
 
 typedef struct node
@@ -55,16 +53,16 @@ int		lst_last_value(t_list *stack);
 void	push_stack(t_list **stack, int value);
 //+------------------------actions---------------------
 void	swap(t_list *stack);
-void	sa(t_list **stack_a);
-void	sb(t_list **stack_b);
+void	sa(t_list **stack_a, int p);
+void	sb(t_list **stack_b, int p);
 void	s_ab(t_list **stack);
 void	reverselist(t_list **stack_head);
-void	ra(t_list **stack_a);
-void	rb(t_list **stack_b);
+void	ra(t_list **stack_a, int p);
+void	rb(t_list **stack_b, int p);
 void	rr(t_list **stack_ab);
 void	last_first(t_list **stack);
-void	rra(t_list **stack_a);
-void	rrb(t_list **stack_a);
+void	rra(t_list **stack_a, int p);
+void	rrb(t_list **stack_a, int p);
 void	rrr(t_list **stack_a);
 void	pb(t_list **stack_a, t_list **stack_b);
 void	pa(t_list **stack_a, t_list **stack_b);

@@ -6,7 +6,7 @@
 /*   By: hamaarou <hamaarou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 17:31:47 by hamaarou          #+#    #+#             */
-/*   Updated: 2023/02/09 17:06:42 by hamaarou         ###   ########.fr       */
+/*   Updated: 2023/02/11 17:57:23 by hamaarou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ void	rotate(t_list **stack_a, t_list **stack_b)
 	{
 		while (j <= s)
 		{
-			rra(stack_a);
+			rra(stack_a, 1);
 			j++;
 		}
 	}
@@ -67,7 +67,7 @@ void	rotate(t_list **stack_a, t_list **stack_b)
 	{
 		while (j > 1)
 		{
-			ra(stack_a);
+			ra(stack_a, 1);
 			j--;
 		}
 	}

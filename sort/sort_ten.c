@@ -6,7 +6,7 @@
 /*   By: hamaarou <hamaarou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 20:17:40 by hamaarou          #+#    #+#             */
-/*   Updated: 2023/02/09 20:19:00 by hamaarou         ###   ########.fr       */
+/*   Updated: 2023/02/11 17:58:39 by hamaarou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,7 +105,7 @@ void	sort_ten(t_list **stack_a, t_list **stack_b)
 			i++;
 		}
 		else
-			ra(stack_a);
+			ra(stack_a, 1);
 	}
 	while (*stack_b)
 		pa(stack_a, stack_b);
