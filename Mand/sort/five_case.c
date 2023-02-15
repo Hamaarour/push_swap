@@ -6,7 +6,7 @@
 /*   By: hamaarou <hamaarou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 17:31:47 by hamaarou          #+#    #+#             */
-/*   Updated: 2023/02/11 17:57:23 by hamaarou         ###   ########.fr       */
+/*   Updated: 2023/02/14 00:46:28 by hamaarou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,4 +90,3 @@ void	case_five_numbers(t_list **stack_a, t_list **stack_b, int i)
 	}
 	pa(stack_a, stack_b);
 }
-// + 5 4 7 85 1

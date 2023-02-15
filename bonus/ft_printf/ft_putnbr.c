@@ -1,30 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pa.c                                               :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hamaarou <hamaarou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/29 15:40:05 by hamaarou          #+#    #+#             */
-/*   Updated: 2023/02/09 00:25:09 by hamaarou         ###   ########.fr       */
+/*   Created: 2022/10/30 19:47:20 by hamaarou          #+#    #+#             */
+/*   Updated: 2023/02/13 21:05:03 by hamaarou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
-// +send top of b to top of a
+#include "../swap_bonus.h"
 
-void	pa(t_list **stack_a, t_list **stack_b)
+int	ft_putnbr(long int nbr)
 {
-	t_list	*first_a;
-	t_list	*first_b;
+	int	a;
 
-	if (stack_b == NULL)
-		return ;
-	first_b = NULL;
-	first_b = (*stack_b);
-	first_a = (*stack_a);
-	(*stack_b) = (*stack_b)->next;
-	(*stack_a) = first_b;
-	first_b->next = first_a;
-	ft_printf("pa\n");
+	a = 1;
+	if (nbr < 0)
+	{
+		a = -1;
+		ft_putchar('-');
+		nbr *= -1;
+	}
+	if (nbr >= 10)
+	{
+		ft_putnbr(nbr / 10);
+		ft_putnbr(nbr % 10);
+	}
+	else
+		ft_putchar(nbr + 48);
+	return (count_nbr(nbr, 10, a));
 }
